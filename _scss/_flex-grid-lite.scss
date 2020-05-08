@@ -1,15 +1,17 @@
-//Base unit used for spacing gutters
-$base-unit:8px;
+//For spacing columns
+$gutter_width: 8px;
 
 //Screen Sizes
 $screen-sm: 480px;
 $screen-md: 624px;
 $screen-lg: 744px;
 
+/*! Flex Grid Lite v1.1 | Copyright (C) 2017-2020 Elliot Dahl | MIT license */
+
 ////////////////////////
 //The Flex Grid
 ////////////////////////
-.grid {
+.gridrow {
     box-sizing: border-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -27,12 +29,15 @@ $screen-lg: 744px;
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    margin: 0 ($base-unit * -1) 0 ($base-unit * -1);
+    margin-left: ($gutter_width * -1);
+    margin-right: ($gutter_width * -1);
     //Use this modifier to remove gutters
-    &.grid-nogutter {
-        margin: 0;
+    &.nogutter {
+        margin-left: 0;
+        margin-right: 0;
         & > .col {
-            padding: 0;
+            padding-left: 0;
+            padding-right: 0;
         }
     }
 }
@@ -51,7 +56,8 @@ $screen-lg: 744px;
     flex-basis: 0;
     max-width: 100%;
     min-width: 0;
-    padding: 0 $base-unit 0 $base-unit;
+    padding-left: $gutter_width;
+    padding-right: $gutter_width;
 }
 
 ////////////////////////
@@ -95,30 +101,30 @@ $screen-lg: 744px;
 }
 
 //Horizontal Grid Alignment
-.grid-start {
+.gridrow-start {
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: flex-start;
 }
 
-.grid-center {
+.gridrow-center {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
 }
 
-.grid-end {
+.gridrow-end {
     -webkit-box-pack: end;
     -ms-flex-pack: end;
     justify-content: flex-end;
 }
 
 //Column Distribution
-.grid-around {
+.gridrow-around {
     justify-content: space-around;
 }
 
-.grid-between {
+.gridrow-between {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
@@ -137,7 +143,7 @@ $screen-lg: 744px;
     order: 1;
 }
 
-.grid-reverse {
+.gridrow-reverse {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
     -ms-flex-direction: row-reverse;
@@ -174,7 +180,7 @@ $screen-lg: 744px;
 //Media Queries
 //////////////////
 @media only screen and (max-width: $screen-sm) {
-    // .grid-sm {
+    // .gridrow-sm {
         .col-sm {
             flex: 100%;
             max-width: 100%;
@@ -183,7 +189,7 @@ $screen-lg: 744px;
 }
 
 @media only screen and (max-width: $screen-md) {
-    // .grid-md {
+    // .gridrow-md {
         .col-md {
             flex: 100%;
             max-width: 100%;
@@ -192,7 +198,7 @@ $screen-lg: 744px;
 }
 
 @media only screen and (max-width: $screen-lg) {
-    // .grid-lg {
+    // .gridrow-lg {
         .col-lg {
             flex: 100%;
             max-width: 100%;
