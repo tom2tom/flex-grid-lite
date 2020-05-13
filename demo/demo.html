@@ -24,20 +24,20 @@
       <section class="pvxxxl" id="auto-layout">
         <div class="section-content margin-auto txt-c">
           <h2 class="mbl">The Basic Auto Layout</h2>
-          <p class="margin-auto type-md">Each column inside the grid is automatically assigned an equal share of the total. The columns are built to respect the layout over the content.</p>
+          <p class="margin-auto type-md">Each cell inside a grid row is by default assigned an equal share of the total width. The cells are configured to respect the layout over the content.</p>
           <div class="grid mbxl sg-grid">
-            <div class="col">.col</div>
-            <div class="col">.col</div>
-            <div class="col">.col</div>
+            <div class="col">.cell</div>
+            <div class="col">.cell</div>
+            <div class="col">.cell</div>
           </div>
-          <pre class=" code-display language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>grid<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+          <pre class=" code-display language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>gridrow<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
     Auto Column
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
     Auto Column
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
     Auto Column
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
@@ -48,25 +48,21 @@
         <div class="section-content margin-auto txt-c">
           <h2 class="mbl">No Gutters</h2>
           <p class="margin-auto type-md">
-            The padding is built into the grid but can be removed with a modifier class. The padding itself is based on the
-            <a href="https://builttoadapt.io/intro-to-the-8-point-grid-system-d2573cde8632" target="_blank">8 point grid system</a>
-            but can be modified in the
-            <a href="https://github.com/elliotdahl/flex-grid-lite" target="_blank">variables</a>
-            file.
+            Padding (gutters) is built into the grid but can be removed with a modifier class. The default padding is 8 pixels. This can be modified by setting margins and padding of relevant css classes.
           </p>
           <div class="grid mbxl sg-grid grid-nogutter">
-            <div class="col">.col</div>
-            <div class="col">.col</div>
-            <div class="col">.col</div>
+            <div class="col">.cell</div>
+            <div class="col">.cell</div>
+            <div class="col">.cell</div>
           </div>
-          <pre class=" code-display language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>grid grid-nogutter<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+          <pre class=" code-display language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>gridrow gridrow_nogutter<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
     Auto Column
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
     Auto Column
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
     Auto Column
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
@@ -75,28 +71,28 @@
       </section>
       <section class="pvxxxl" id="percent-columns">
         <div class="section-content margin-auto txt-c">
-          <h2 class="mbl">Percentage Based Columns</h2>
+          <h2 class="mbl">Percentage Based Widths</h2>
           <p class="margin-auto type-md">Based on the familiar n/12 column system.</p>
           <div class="grid mvxl sg-grid">
-            <div class="col col-3">.col.col-3</div>
-            <div class="col col-9">.col.col-9</div>
+            <div class="col col-3">.cell.cell_3</div>
+            <div class="col col-9">.cell.cell_9</div>
           </div>
           <div class="grid mvxl sg-grid">
-            <div class="col col-4">.col.col-4</div>
-            <div class="col col-4">.col.col-4</div>
-            <div class="col col-4">.col.col-4</div>
+            <div class="col col-4">.cell.cell_4</div>
+            <div class="col col-4">.cell.cell_4</div>
+            <div class="col col-4">.cell.cell_4</div>
           </div>
           <div class="grid mvxl sg-grid">
-            <div class="col col-5">.col.col-5</div>
-            <div class="col col-2">.col.col-2</div>
-            <div class="col col-2">.col.col-2</div>
-            <div class="col col-3">.col.col-3</div>
+            <div class="col col-5">.cell.cell_5</div>
+            <div class="col col-2">.cell.cell_2</div>
+            <div class="col col-2">.cell.cell_2</div>
+            <div class="col col-3">.cell.cell_3</div>
           </div>
-          <pre class=" code-display language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>grid<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col col-3<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+          <pre class=" code-display language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>gridrow<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell cell_3<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
     25% (3/12)
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col col-9<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell cell_9<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
     75% (9/12)
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
@@ -105,31 +101,31 @@
       </section>
       <section class="pvxxxl" id="grow-columns">
         <div class="section-content margin-auto txt-c">
-          <h2 class="mbl">Flex Grow Columns</h2>
+          <h2 class="mbl">Flex Grow Cells</h2>
           <p class="margin-auto type-md">
             Based on
             <a href="https://css-tricks.com/almanac/properties/f/flex-grow/" target="_blank">flex-grow</a>
-            this layout style allows for dynamic content distribution. These columns will respect their given ratio and resist dropping onto a second row unlike a percentage based column.
+            this layout style allows for dynamic content distribution. These cells will respect their given ratio and resist dropping onto a second row, unlike a percentage-based cell.
           </p>
           <div class="grid mvxl sg-grid">
-            <div class="col col-grow-2">.col.col-grow-2</div>
-            <div class="col">.col</div>
-            <div class="col">.col</div>
+            <div class="col col-grow-2">.cell.cell_grow_2</div>
+            <div class="col">.cell</div>
+            <div class="col">.cell</div>
           </div>
           <div class="grid mvxl sg-grid">
-            <div class="col col-grow-3">.col.col-grow-3</div>
-            <div class="col col-grow-2">.col.col-grow-2</div>
-            <div class="col">.col</div>
+            <div class="col col-grow-3">.cell.cell_grow_3</div>
+            <div class="col col-grow-2">.cell.cell_grow_2</div>
+            <div class="col">.cell</div>
           </div>
           <div class="grid mvxl sg-grid">
-            <div class="col col-grow-3">.col.col-grow-3</div>
-            <div class="col">.col</div>
+            <div class="col col-grow-3">.cell.cell_grow_3</div>
+            <div class="col">.cell</div>
           </div>
-          <pre class=" code-display language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>grid<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col col-grow-3<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+          <pre class=" code-display language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>gridrow<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell cell_grow_3<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
     Grow 3 Columns
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
     Auto Column
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
@@ -138,8 +134,8 @@
       </section>
       <section class="pvxxxl" id="fixed-columns">
         <div class="section-content margin-auto txt-c">
-          <h2 class="mbl">Fixed Columns</h2>
-          <p class="margin-auto type-md">Add in the fixed column class and pass the column a defined width or allow content like an image to dictate the desired width. It's recommended to fill the space with dynamic flex columns however you can mix in percent based columns too. Utilizing a fixed column with only percent based columns will make it difficult to reach 100%.</p>
+          <h2 class="mbl">Fixed Widths</h2>
+          <p class="margin-auto type-md">Add in the fixed width class and pass the cell a defined width or allow content like an image to dictate the desired width. It's recommended to fill the space with dynamic flex cells however you can mix in percent-based cells too. Utilizing a fixed column with only percent-based cells will make it difficult to reach 100%.</p>
           <div class="grid mtxl">
             <div class="col col-fixed" style="width:168px;">
               <div class="mono type-orange-1">Fixed 168px</div>
@@ -151,19 +147,19 @@
             </div>
           </div>
           <div class="grid sg-grid">
-            <div class="col col-fixed" style="width:168px;">.col.col-fixed</div>
-            <div class="col">.col</div>
-            <div class="col">.col</div>
+            <div class="col col-fixed" style="width:168px;">.cell.cell_fixed</div>
+            <div class="col">.cell</div>
+            <div class="col">.cell</div>
           </div>
-          <pre class=" code-display language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>grid<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col col-fixed<span class="token punctuation">'</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">='</span><span class="token attr-value"><span class="token property">width</span><span class="token punctuation">:</span>168px<span class="token punctuation">;</span></span><span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
-    col col-fixed
+          <pre class=" code-display language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>gridrow<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell cell_fixed<span class="token punctuation">'</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">='</span><span class="token attr-value"><span class="token property">width</span><span class="token punctuation">:</span>168px<span class="token punctuation">;</span></span><span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+    cell cell_fixed
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
-    col
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+    cell
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
-    col
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+    cell
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
@@ -171,7 +167,7 @@
       </section>
       <section class="pvxxxl" id="mixed-columns">
         <div class="section-content margin-auto txt-c">
-          <h2 class="mbl">Mixed Columns</h2>
+          <h2 class="mbl">Mixed Widths</h2>
           <p class="margin-auto type-md">This is the real power of flexbox at work in your layouts.</p>
           <div class="grid mtxl">
             <div class="col col-fixed" style="width:168px;">
@@ -184,9 +180,9 @@
             </div>
           </div>
           <div class="grid mbxl sg-grid">
-            <div class="col col-fixed" style="width:168px;">.col.col-fixed</div>
-            <div class="col col-grow-2">.col.col-grow-2</div>
-            <div class="col">.col</div>
+            <div class="col col-fixed" style="width:168px;">.cell.cell_fixed</div>
+            <div class="col col-grow-2">.cell.cell_grow_2</div>
+            <div class="col">.cell</div>
           </div>
           <div class="grid mtxl">
             <div class="col col-fixed" style="width:168px;">
@@ -203,22 +199,22 @@
             </div>
           </div>
           <div class="grid mbxl sg-grid">
-            <div class="col col-fixed" style="width:168px;">.col.col-fixed</div>
-            <div class="col col-grow-2">.col.col-grow-2</div>
-            <div class="col">.col</div>
-            <div class="col col-3">.col.col-3</div>
+            <div class="col col-fixed" style="width:168px;">.cell.cell_fixed</div>
+            <div class="col col-grow-2">.cell.cell_grow_2</div>
+            <div class="col">.cell</div>
+            <div class="col col-3">.cell.cell_3</div>
           </div>
-          <pre class=" code-display language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>grid<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col col-fixed<span class="token punctuation">'</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">='</span><span class="token attr-value"><span class="token property">width</span><span class="token punctuation">:</span>168px<span class="token punctuation">;</span></span><span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+          <pre class=" code-display language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>gridrow<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell cell_fixed<span class="token punctuation">'</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">='</span><span class="token attr-value"><span class="token property">width</span><span class="token punctuation">:</span>168px<span class="token punctuation">;</span></span><span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
     Fixed Column
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col col-grow-2<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell cell_grow_2<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
     Grow 2 Column
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
     Auto Column
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col col-3<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell cell_3<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
     25% (3/12)
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
@@ -228,20 +224,20 @@
       <section class="pvxxxl" id="content-alignment">
         <div class="section-content margin-auto txt-c">
           <h2 class="mbl">Content Alignment</h2>
-          <p class="margin-auto type-md">Vertically align the content inside of a column.</p>
+          <p class="margin-auto type-md">Vertically align the content inside a cell.</p>
           <div class="grid mvxl sg-grid">
-            <div class="col col-top" style="height:96px;">.col-top</div>
-            <div class="col col-middle" style="height:96px;">.col-middle</div>
-            <div class="col col-bottom" style="height:96px;">.col-bottom</div>
+            <div class="col col-top" style="height:96px;">.cell_top</div>
+            <div class="col col-middle" style="height:96px;">.cell_middle</div>
+            <div class="col col-bottom" style="height:96px;">.cell_bottom</div>
           </div>
-          <pre class=" code-display language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>grid<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col col-top<span class="token punctuation">'</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">='</span><span class="token attr-value"><span class="token property">height</span><span class="token punctuation">:</span>96px<span class="token punctuation">;</span></span><span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+          <pre class=" code-display language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>gridrow<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell cell_top<span class="token punctuation">'</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">='</span><span class="token attr-value"><span class="token property">height</span><span class="token punctuation">:</span>96px<span class="token punctuation">;</span></span><span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
     Content aligned to top
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col col-middle<span class="token punctuation">'</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">='</span><span class="token attr-value"><span class="token property">height</span><span class="token punctuation">:</span>96px<span class="token punctuation">;</span></span><span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell cell_middle<span class="token punctuation">'</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">='</span><span class="token attr-value"><span class="token property">height</span><span class="token punctuation">:</span>96px<span class="token punctuation">;</span></span><span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
     Content aligned to middle
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col col-bottom<span class="token punctuation">'</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">='</span><span class="token attr-value"><span class="token property">height</span><span class="token punctuation">:</span>96px<span class="token punctuation">;</span></span><span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell cell_bottom<span class="token punctuation">'</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">='</span><span class="token attr-value"><span class="token property">height</span><span class="token punctuation">:</span>96px<span class="token punctuation">;</span></span><span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
     Content aligned to bottom
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
@@ -250,33 +246,33 @@
       </section>
       <section class="pvxxxl" id="column-vertical-alignment">
         <div class="section-content margin-auto txt-c">
-          <h2 class="mbl">Column Vertical Alignment</h2>
+          <h2 class="mbl">Cell Content Vertical Alignment</h2>
           <p class="margin-auto type-md">
-            Columns alignment relative to each other inside of the
-            <code>.grid</code>
+            Cells alignment relative to each other inside a
+            <code>.gridrow</code>
             container.
           </p>
           <div class="grid mvxl sg-grid">
-            <div class="col col-align-top">.col-align-top</div>
-            <div class="col col-align-middle">.col-align-middle</div>
-            <div class="col col-align-bottom">.col-align-bottom</div>
+            <div class="col col-align-top">.cell_align_top</div>
+            <div class="col col-align-middle">.cell_align_middle</div>
+            <div class="col col-align-bottom">.cell_align_bottom</div>
             <div class="col" style="height:112px;">
-              <div>Tall column expanding</div>
+              <div>Tall cell expanding</div>
               <div>the height of</div>
-              <div>the grid container</div>
+              <div>the grid row</div>
             </div>
           </div>
-          <pre class=" code-display language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>grid<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col col-align-top<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+          <pre class=" code-display language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>gridrow<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell cell_align_top<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
     Top Aligned Column
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col col-align-middle<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell cell_align_middle<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
     Middle Aligned Column
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col col-align-bottom<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell cell_align_bottom<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
     Bottom Aligned Column
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col<span class="token punctuation">'</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">='</span><span class="token attr-value"><span class="token property">height</span><span class="token punctuation">:</span>112px<span class="token punctuation">;</span></span><span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell<span class="token punctuation">'</span></span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">='</span><span class="token attr-value"><span class="token property">height</span><span class="token punctuation">:</span>112px<span class="token punctuation">;</span></span><span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
     Tall Column
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
@@ -285,24 +281,24 @@
       </section>
       <section class="pvxxxl" id="column-horizontal-alignment">
         <div class="section-content margin-auto txt-c">
-          <h2 class="mbl">Grid Horizontal Alignment</h2>
+          <h2 class="mbl">Cell Horizontal Alignment</h2>
           <p class="margin-auto type-md">
             Apply modifier classes to the
-            <code>.grid</code>
-            element to change the alignment of columns.
+            <code>.gridrow</code>
+            element to change the alignment of cells.
           </p>
           <div class="grid mvxl grid-start sg-grid">
-            <div class="col col-6">.grid-start .col.col-6</div>
+            <div class="col col-6">.gridrow_start .cell.cell_6</div>
           </div>
           <div class="grid mvxl grid-center sg-grid">
-            <div class="col col-3">.grid-center .col.col-3</div>
-            <div class="col col-3">.grid-center .col.col-3</div>
+            <div class="col col-3">.gridrow_center .cell.cell_3</div>
+            <div class="col col-3">.gridrow_center .cell.cell_3</div>
           </div>
           <div class="grid mvxl grid-end sg-grid">
-            <div class="col col-6">.grid-end .col.col-6</div>
+            <div class="col col-6">.gridrow_end .cell.cell_6</div>
           </div>
-          <pre class=" code-display language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>grid grid-end<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col col-6<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+          <pre class=" code-display language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>gridrow gridrow_end<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell cell_6<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
     Aligned to the end
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
@@ -311,27 +307,27 @@
       </section>
       <section class="pvxxxl" id="column-distribution">
         <div class="section-content margin-auto txt-c">
-          <h2 class="mbl">Column Distribution</h2>
-          <p class="margin-auto type-md">Distribute space around or between columns equally.</p>
+          <h2 class="mbl">Cell Distribution</h2>
+          <p class="margin-auto type-md">Distribute space around or between cells equally.</p>
           <div class="grid mvxl grid-around sg-grid">
-            <div class="col col-3">.grid-around .col.col-3</div>
-            <div class="col col-3">.grid-around .col.col-3</div>
-            <div class="col col-3">.grid-around .col.col-3</div>
+            <div class="col col-3">.gridrow_around .cell.cell_3</div>
+            <div class="col col-3">.gridrow_around .cell.cell_3</div>
+            <div class="col col-3">.gridrow_around .cell.cell_3</div>
           </div>
           <div class="grid mvxl grid-between sg-grid">
-            <div class="col col-3">.grid-between .col.col-3</div>
-            <div class="col col-3">.grid-between .col.col-3</div>
-            <div class="col col-3">.grid-between .col.col-3</div>
+            <div class="col col-3">.gridrow_between .cell.cell_3</div>
+            <div class="col col-3">.gridrow_between .cell.cell_3</div>
+            <div class="col col-3">.gridrow_between .cell.cell_3</div>
           </div>
-          <pre class=" code-display language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>grid grid-between<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col col-3<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
-    Equal space between columns
+          <pre class=" code-display language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>gridrow gridrow_between<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell cell_3<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+    Equal space between cells
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col col-3<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
-    Equal space between columns
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell cell_3<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+    Equal space between cells
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col col-3<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
-    Equal space between columns
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell cell_3<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+    Equal space between cells
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
@@ -339,13 +335,13 @@
       </section>
       <section class="pvxxxl" id="column-ordering">
         <div class="section-content margin-auto txt-c">
-          <h2 class="mbl">Column Ordering</h2>
+          <h2 class="mbl">Cell Ordering</h2>
           <p class="margin-auto type-md">
-            Change the order of columns by using the modifier classes
-            <code>.col-first</code>
-            to move a column to the first position or
-            <code>.col-last</code>
-            to move it to the last position.
+            Change the order of cells by using the modifier classes
+            <code>.cell_first</code>
+            position a cell first or
+            <code>.cell_last</code>
+            last.
           </p>
           <div class="grid mvxl sg-grid">
             <div class="col">1</div>
@@ -355,43 +351,43 @@
           <div class="grid mvxl sg-grid">
             <div class="col">1</div>
             <div class="col">2</div>
-            <div class="col col-first">.col-first</div>
+            <div class="col col-first">.cell_first</div>
           </div>
           <div class="grid mvxl sg-grid">
-            <div class="col col-last">.col-last</div>
+            <div class="col col-last">.cell_last</div>
             <div class="col">2</div>
             <div class="col">3</div>
           </div>
-          <pre class=" code-display mbxl language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>grid<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col col-last<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+          <pre class=" code-display mbxl language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>gridrow<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell cell_last<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
     1st Column
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
     2nd Column
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
     3rd Column
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 </code></pre>
           <p class="margin-auto type-md">
             Use
-            <code>.grid-reverse</code>
-            to reverse the order of all columns.
+            <code>.gridrow_reverse</code>
+            to reverse the order of all cells.
           </p>
           <div class="grid mvxl sg-grid grid-reverse">
             <div class="col">1</div>
             <div class="col">2</div>
             <div class="col">3</div>
           </div>
-          <pre class=" code-display language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>grid grid-reverse<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+          <pre class=" code-display language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>gridrow gridrow_reverse<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
     1st Column
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
     2nd Column
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
     3rd Column
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
@@ -418,19 +414,19 @@
               Auto Column
             </div>
           </div>
-          <pre class=" code-display language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>grid<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+          <pre class=" code-display language-markup"><code class=" language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>gridrow<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
     Auto Column
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>grid<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>gridrow<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
         Nested Inside
       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
         Nested Inside
       <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
-  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>col<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">'</span>cell<span class="token punctuation">'</span></span><span class="token punctuation">&gt;</span></span>
     Auto Column
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
@@ -441,28 +437,28 @@
         <div class="section-content margin-auto txt-c">
           <h2 class="mbl">Media Breakpoints</h2>
           <p class="margin-auto type-md">
-            Media breakpoint classes define the screen size a column should go to 100%. The small
-            <code>.col-sm</code>
+            Media breakpoint classes define the screen size below whicb cells go to 100% width. The small
+            <code>.cell_sm</code>
             snaps to 100% at 480px,
-            <code>.col-md</code>
+            <code>.cell_md</code>
             at 624px, and
-            <code>.col-lg</code>
+            <code>.cell_lg</code>
             at 744px. The breakpoint classes will overwrite any other percentage or grow based modifier class. Nesting grids can create more complex responsive layouts.
           </p>
           <div class="grid mvxl sg-grid">
-            <div class="col col-md">.col.col-md</div>
-            <div class="col col-md">.col.col-md</div>
-            <div class="col col-lg">.col.col-lg</div>
+            <div class="col col-md">.cell.cell_md</div>
+            <div class="col col-md">.cell.cell_md</div>
+            <div class="col col-lg">.cell.cell_lg</div>
           </div>
           <div class="grid mvxl sg-grid">
-            <div class="col col-sm">.col.col-sm</div>
-            <div class="col col-5 col-sm">.col.col-5.col-sm</div>
-            <div class="col col-lg">.col.col-lg</div>
+            <div class="col col-sm">.cell.cell_sm</div>
+            <div class="col col-5 col-sm">.cell.cell_5.cell_sm</div>
+            <div class="col col-lg">.cell.cell_lg</div>
           </div>
           <div class="grid mvxl sg-grid">
-            <div class="col col-md col-grow-2">.col.col-grow-2.col-md</div>
-            <div class="col col-md">.col.col-md</div>
-            <div class="col col-lg">.col.col-lg</div>
+            <div class="col col-md col-grow-2">.cell.cell_grow_2.cell_md</div>
+            <div class="col col-md">.cell.cell_md</div>
+            <div class="col col-lg">.cell.cell_lg</div>
           </div>
         </div>
       </section>
