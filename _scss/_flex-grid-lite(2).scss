@@ -1,0 +1,304 @@
+//Rows spacing
+$gutter_height: 4px; //actually, half-height
+//Columns spacing
+$gutter_width: 4px; //actually, half-width
+
+//Screen Sizes
+$screen-sm: 480px;
+$screen-md: 624px;
+$screen-lg: 744px;
+
+//Mixins from https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Mixins
+@mixin flexbox {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+@mixin flex($fg: 0, $fs: 1, $fb: auto) {
+	// Set a variable to be used by box-flex properties
+	$fg-boxflex: $fg;
+
+	// Box-Flex only supports a flex-grow value so lets grab the
+	// first item in the list and just return that.
+	@if type-of($fg) == 'list' {
+		$fg-boxflex: nth($fg, 1);
+	}
+
+	-webkit-box: $fg-boxflex;
+	-moz-box: $fg-boxflex;
+	-webkit-flex: $fg $fs $fb;
+	-ms-flex: $fg $fs $fb;
+	flex: $fg $fs $fb;
+}
+
+@mixin flex-direction($value: row) {
+	@if $value == row-reverse {
+		-ms-box-direction: reverse;
+		-ms-box-orient: horizontal;
+		-webkit-box-direction: reverse;
+		-webkit-box-orient: horizontal;
+		-moz-box-direction: reverse;
+		-moz-box-orient: horizontal;
+	} @else if $value == column {
+		-ms-box-direction: normal;
+		-ms-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-box-orient: vertical;
+		-moz-box-direction: normal;
+		-moz-box-orient: vertical;
+	} @else if $value == column-reverse {
+		-ms-box-direction: reverse;
+		-ms-box-orient: vertical;
+		-webkit-box-direction: reverse;
+		-webkit-box-orient: vertical;
+		-moz-box-direction: reverse;
+		-moz-box-orient: vertical;
+	} @else {
+		-ms-box-direction: normal;
+		-ms-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		-webkit-box-orient: horizontal;
+		-moz-box-direction: normal;
+		-moz-box-orient: horizontal;
+	}
+	-webkit-flex-direction: $value;
+	-ms-flex-direction: $value;
+	flex-direction: $value;
+}
+
+@mixin flex-wrap($value: nowrap) {
+	// No Webkit/FF Box fallback.
+	-webkit-flex-wrap: $value;
+	@if $value == nowrap {
+		-ms-flex-wrap: none;
+	} @else {
+		-ms-flex-wrap: $value;
+	}
+	flex-wrap: $value;
+}
+
+@mixin flex-grow($int: 1) {
+	-ms-box-flex: $int;
+	-webkit-box-flex: $int;
+	-moz-box-flex: $int;
+	-webkit-flex-grow: $int;
+	-ms-flex: $int;
+	flex-grow: $int;
+}
+
+@mixin flex-basis($value: auto) {
+	-ms-flex-preferred-size: $value;
+	-webkit-flex-basis: $value;
+	flex-basis: $value;
+}
+
+@mixin order($int: 0) {
+	-ms-box-ordinal-group: $int + 1;
+	-webkit-box-ordinal-group: $int + 1;
+	-moz-box-ordinal-group: $int + 1;
+	-webkit-order: $int;
+	-ms-flex-order: $int;
+	order: $int;
+}
+
+@mixin justify-content($value: flex-start) {
+	@if $value == flex-start {
+		-ms-box-pack: start;
+		-webkit-box-pack: start;
+		-moz-box-pack: start;
+		-ms-flex-pack: start;
+	} @else if $value == flex-end {
+		-ms-box-pack: end;
+		-webkit-box-pack: end;
+		-moz-box-pack: end;
+		-ms-flex-pack: end;
+	} @else if $value == space-between {
+		-ms-box-pack: justify;
+		-webkit-box-pack: justify;
+		-moz-box-pack: justify;
+		-ms-flex-pack: justify;
+	} @else if $value == space-around {
+		-ms-flex-pack: distribute;
+	} @else {
+		-ms-box-pack: $value;
+		-webkit-box-pack: $value;
+		-moz-box-pack: $value;
+		-ms-flex-pack: $value;
+	}
+	-webkit-justify-content: $value;
+	justify-content: $value;
+}
+
+@mixin align-self($value: auto) {
+	// No Webkit Box Fallback.
+	-webkit-align-self: $value;
+	@if $value == flex-start {
+		-ms-flex-item-align: start;
+	} @else if $value == flex-end {
+		-ms-flex-item-align: end;
+	} @else {
+		-ms-flex-item-align: $value;
+	}
+	align-self: $value;
+}
+
+/*! Flex Grid Lite v2.0 | Copyright (C) 2017-2020 Elliot Dahl | MIT license */
+
+.gridcell {
+	box-sizing: border-box;
+	@include flex(1, 0, 0);
+	max-width: 100%;
+	min-width: 0;
+	margin: $gutter_height $gutter_width; //might want to override this
+
+	//Cell Vertical Alignment Classes
+	&.aligntop, &_aligntop {
+		@include align-self(flex-start);
+	}
+
+	&.alignbottom, &_alignbottom {
+		@include align-self(flex-end);
+	}
+
+	&.alignmiddle, &_alignmiddle {
+		@include align-self(center);
+	}
+
+	//Reordered Cells
+	&.first, &_first {
+		@include order(-1);
+	}
+
+	&.last, &_last {
+		@include order(1);
+	}
+
+	//Fixed Column Class
+	&.fixed, &_fixed {
+		-webkit-box: initial;
+		-moz-box: initial;
+		-webkit-flex: none;
+		-ms-flex: none;
+		flex: none;
+	}
+}
+
+//Percentage Cells
+@for $i from 1 through 12 {
+	$value: (100% / 12) * $i;
+	.cell_#{$i} {
+		@include flex-basis($value);
+		max-width: $value;
+	}
+}
+
+//Growable Cells
+@for $i from 2 through 11 {
+	.cell_grow_#{$i} {
+		@include flex-grow($i);
+	}
+}
+
+//Column Vertical Alignment
+.gridcol {
+	box-sizing: border-box;
+	@include flexbox;
+	@include flex-direction(column);
+
+	&.top, &_top {
+		@include justify-content(flex-start);
+	}
+	&.middle, &_middle {
+		@include justify-content(center);
+	}
+	&.bottom, &_bottom {
+		@include justify-content(flex-end);
+	}
+}
+
+.gridrow {
+	box-sizing: border-box;
+	@include flexbox;
+	@include flex-direction(row);
+	@include flex(0, 1, auto);
+	@include flex-wrap(wrap);
+
+	margin: 0; //might want to override this
+	//Apply this modifier to the first row, if gutters are used
+	&.first, &_first {
+		& > .cell {
+			margin-top: $gutter_height * 2;
+		}
+	}
+	//Apply this modifier to the last row, if gutters are used
+	&.last, &_last {
+		& > .cell {
+			margin-bottom: $gutter_height * 2;
+		}
+	}
+	//Use this modifier to remove all gutters
+	&.nogutter, &_nogutter {
+		& > .cell {
+			margin: 0;
+		}
+	}
+
+	//Horizontal Alignment
+	&.start, &_start {
+		@include justify-content(flex-start);
+	}
+
+	&.center, &_center {
+		@include justify-content(center);
+	}
+
+	&.end, &_end {
+		@include justify-content(flex-end);
+	}
+
+	//Column Distribution
+	&.around, &_around {
+		@include justify-content(space-around);
+	}
+
+	&.between, &_between {
+		@include justify-content(space-between);
+	}
+
+	&.reverse, &_reverse {
+		@include flex-direction(row-reverse);
+	}
+}
+
+//////////////////
+//Media Queries
+//////////////////
+@media only screen and (max-width: $screen-sm) {
+//	.gridrow-sm {
+		.cell-sm {
+			@include flex(1, 1, 100%);
+			max-width: 100%;
+		}
+//	}
+}
+
+@media only screen and (max-width: $screen-md) {
+//	.gridrow-md {
+		.cell-md {
+			@include flex(1, 1, 100%);
+			max-width: 100%;
+		}
+//	}
+}
+
+@media only screen and (max-width: $screen-lg) {
+//	.gridrow-lg {
+		.cell-lg {
+			@include flex(1, 1, 100%);
+			max-width: 100%;
+		}
+//	}
+}
